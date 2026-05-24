@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 // src/app/api/cron/expire-reservations/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import { releaseExpiredReservations } from "@/lib/expiry";
