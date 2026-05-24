@@ -12,8 +12,6 @@ export async function GET(
   const { id } = params;
 
   try {
-    // Lazy expiry cleanup
-    await releaseExpiredReservations();
 
     const reservation = await prisma.reservation.findUnique({
       where: { id },
