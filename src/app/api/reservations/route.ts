@@ -7,7 +7,7 @@ import { acquireLock, releaseLock } from "@/lib/redis";
 import { withIdempotency } from "@/lib/idempotency";
 import { ReserveSchema } from "@/lib/schemas";
 
-const RESERVATION_TTL_MS = 10 * 60 * 1000; // 10 minutes
+const RESERVATION_TTL_MS = 24 * 60 * 60 * 1000; //  24 hours temporirily
 
 export async function POST(req: NextRequest) {
   const idempotencyKey = req.headers.get("Idempotency-Key");
