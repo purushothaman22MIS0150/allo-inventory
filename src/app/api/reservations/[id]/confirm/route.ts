@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 // src/app/api/reservations/[id]/confirm/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
