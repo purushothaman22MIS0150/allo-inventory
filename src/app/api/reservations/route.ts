@@ -68,6 +68,7 @@ export async function POST(req: NextRequest) {
         });
 
         const expiresAt = new Date(Date.now() + RESERVATION_TTL_MS);
+        console.log('Creating reservation, now:', new Date().toISOString(), 'expires:', expiresAt.toISOString());
         const reservation = await tx.reservation.create({
           data: {
             stockLevelId: stockLevel.id,
