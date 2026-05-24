@@ -43,7 +43,7 @@ function useCountdown(expiresAt: string | null) {
 
   const minutes = Math.floor(remaining / 60000);
   const seconds = Math.floor((remaining % 60000) / 1000);
-  const isExpired = remaining === 0 && expiresAt !== null;
+  const isExpired = remaining === 0 && expiresAt !== null && new Date(expiresAt).getTime() < Date.now();
   const isCritical = remaining < 60000 && remaining > 0;
 
   return { minutes, seconds, remaining, isExpired, isCritical };
